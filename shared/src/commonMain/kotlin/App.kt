@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -19,22 +20,25 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun App() {
     MaterialTheme {
-        var greetingText by remember { mutableStateOf("Hello, World!") }
-        var showImage by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = {
-                greetingText = "Hello, ${getPlatformName()}"
-                showImage = !showImage
-            }) {
-                Text(greetingText)
-            }
-            AnimatedVisibility(showImage) {
-                Image(
-                    painterResource("compose-multiplatform.xml"),
-                    null
-                )
-            }
-        }
+        GmailApp()
+//        var greetingText by remember { mutableStateOf("Hello, World!") }
+//        var showImage by remember { mutableStateOf(false) }
+//        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+//            TextField(greetingText, onValueChange = { greetingText = it })
+//            Button(onClick = {
+//                greetingText = "Hello, ${getPlatformName()}"
+//                showImage = !showImage
+//            }) {
+//                Text(greetingText)
+//            }
+//
+//            AnimatedVisibility(showImage) {
+//                Image(
+//                    painterResource("compose-multiplatform.xml"),
+//                    null
+//                )
+//            }
+//        }
     }
 }
 
